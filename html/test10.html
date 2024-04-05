@@ -1,0 +1,130 @@
+<html>
+<head>
+  <title>폼태그 연습</title>
+</head>
+<body>
+  <h2>회 원 가 입</h2>
+  <form name = "" method = "" action = ""> 
+    <p>성명 : <input type = "text" name = "name" id = "name" maxlength = "6" size = "10"></p>
+    <p>나이 : <input type = "number" name = "age" id = "age" min = "1" max = "70" size = "10"></p>
+    <p>닉네임 : <input type = "text" name = "nickname" id = "nickname" maxlength = "11" size = "10" /></p>
+    <p>비밀번호 : <input type = "password" name = "pwd" id = "pwd" maxlength = "14" size = "10" /></p>
+    <p>검색어 : <input type = "search" name = "search" id = "search" maxlength = "14" size = "10" /></p>
+    <p>이메일 : <input type = "email" name = "email" id = "email" maxlength = "14" size = "10" /></p>
+    <p>전화번호 : <input type = "tel" name = "tel" id = "tel" maxlength = "14" size = "10" /></p>
+    <p>성별 : 
+      <input type = "radio" name = "gender" id = "gender1"/> 남자
+      <input type = "radio" name = "gender" id = "gender2" checked /> 여자
+    </p>
+      <p>카드 : 
+      <input type = "checkbox" name = "card" id = "card1" /> NH농협카드
+      <input type = "checkbox" name = "card" id = "card2" /> 국민카드
+      <input type = "checkbox" name = "card" id = "card3" /> 우리카드
+      <input type = "checkbox" name = "card" id = "card4" /> 신한카드
+      <input type = "checkbox" name = "card" id = "card5" /> 교통카드
+      <input type = "checkbox" name = "card" id = "card6" /> 윌리윙카드
+    </p>
+    <p>
+      직업 : 
+      <select name = "job" id = "job">
+        <option>무기징역수</option>
+        <option>카지노환전상</option>
+        <option>가상화폐투자자</option>
+        <option>내부거래자</option>
+        <option>마약상</option>
+        <option>살인청부업자</option>
+        <option>암살자</option>
+        <option>마법사</option>
+        <option>원거리 딜러</option>
+        <option>서포터</option>
+        <option>트랙터</option>
+        <option>헤이 거기 거기 미스터</option>
+        <option>에스파 윈터</option>
+        <option>블랙핑크 동생 그룹 베이비몬스터</option>
+        <option>엄청 길면 어떨지 궁금해서 막 길게 주저리주저리 해보는 테스트입니다</option>
+      </select> 
+    </p>
+    <p>
+      좋아하는 걸그룹 : 
+      <select name = "job" id = "job" size = "5" multiple>
+        <option>아이브</option>
+        <option>르세라핌</option>
+        <option>엔믹스</option>
+        <option>뉴진스</option>
+        <option>드림캐쳐</option>
+        <option>(여자)아이들</option>
+        <option>프로미스나인</option>
+        <option>레드벨벳</option>
+        <option>로켓펀치</option>
+        <option>아이즈원</option>
+      </select>  
+    </p> 
+    <p>
+      자기소개 : <textarea rows = "15" cols = "50" name = "content"></textarea>
+    </p>   
+    <p>
+      첨부파일 : <input type = "file" name = "file" id = "file" />
+    </p>
+    <p>
+      주문수량1 : <input type = "range" name = "su" id = "su" min = "1" max = "15" value = "1" /> 개
+    </p>
+    <p>
+      주문수량2 : <input type = "number" name = "su2" id = "su2" min = "1" max = "20" value = "0" /> 개
+    </p>
+    <p>
+      주문수량3 : <input type = "number" name = "su3" id = "su3" step = "5" min = "1" max = "15" value = "0" /> 개
+    </p>
+    <p>
+      작업진행상태 : <progress value = "30" max = "100"></progress> 
+    </p>    
+  </form>
+    <p>
+      사용량(traffics) :
+      <meter value = "700" low = "300" high = "800" min = "100" max = "1000"></meter> 
+    </p>
+    <p>
+      대학교 과 모음
+      <select name = "hakkwa" id = "hakkwa">
+      <optgroup label = "1급 그룹">
+        <option>제주대 감귤포장학과</option>
+        <option>대불대 목탁가공학과</option>
+        <option>연세대 빵생산학과</option>
+      </optgroup>  
+      <optgroup label = "2급 그룹">
+        <option>연승대 이승철헤어학과</option>
+        <option>농구대 자유투학과</option>
+        <option>축구골대 노골방지학과</option>
+      </optgroup>  
+      <optgroup label = "3급 그룹">
+        <option>너무힘들대 같이걸을과?</option>
+        <option>진짜그렇대 다시할과?</option>
+        <option>군대 다시갈과?</option>
+      </optgroup>  
+      </select>
+    </p>
+    <p>
+      대학명 : <input type = "text" name = "uni" id = "uni" value = "그린대학교" readonly />
+    </p>
+    <p>
+      대학명 : 
+      <input type = "text" name = "academi" id = "academi" value = "그린대학교" list = "choises" required />
+      <datalist id = "choises">
+        <option>서울대학교</option>
+        <option>울대학교</option>
+        <option>첨성대학교</option>
+        <option>야!쟤운대학교</option>
+        <option>슬픈대학교</option>
+      </datalist>
+    </p>
+    <p>
+      날짜 : <input type = "date" name = "today" id = "today" />
+    </p> 
+    <p>
+      시간 : <input type = "time" name = "today2" id = "today2" />
+    </p>      
+    <p>
+      요일 : <input type = "week" name = "today3" id = "today3" />
+    </p>      
+  <p><br/><br/><br/><br/><br/><br/></p>
+</body>
+</html>

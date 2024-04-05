@@ -1,0 +1,116 @@
+<html>
+<head>
+  <title>폼태그 연습</title>
+</head>
+<body>
+  <h2>회 원 가 입</h2>
+  <form name="" method="post" action="https://cafe.daum.net/javaspring">
+    <table border="1px" cellpadding="8px" cellspacing="0px">
+      <tr>
+        <th bgcolor = "#f70f0f">성명</th>
+        <td><input type="text" name="name" id="name" maxlength="10" /></td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>나이</th>
+        <td><input type="number" name="age" id="age" min="1" max="99" /></td>
+      </tr>
+      <tr>
+        <th  bgcolor = "#f70f0f">닉네임</th>
+        <td><input type="text" name="nickName" id="nickName" size="10" /></td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>비밀번호</th>
+        <td><input type="password" name="pwd" id="pwd"  maxlength="15"/></td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>검색어</th>
+        <td><input type="search" name="search" id="search" /></td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>이메일</th>
+        <td><input type="email" name="email" id="email" /></td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>전화번호</th>
+        <td><input type="tel" name="tel" id="tel" /></td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>성별</th>
+        <td>
+          <input type="radio" name="gender" id="gender1" />남자
+          <input type="radio" name="gender" id="gender2" checked />여자
+        </td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>소지한 카드</th>
+        <td>
+          <input type="checkbox" name="card" id="card1"/>삼성카드
+          <input type="checkbox" name="card" id="card2"/>LG카드
+          <input type="checkbox" name="card" id="card3"/>농협카드
+          <input type="checkbox" name="card" id="card4"/>신한카드
+          <input type="checkbox" name="card" id="card5"/>롯데카드
+          <input type="checkbox" name="card" id="card6"/>BC카드
+        </td>
+      <tr bgcolor = "#f70f0f">
+        <th>직업</th>
+        <td>
+          <select name="job" id="job">
+            <option>무기징역수</option>
+            <option>카지노환전상</option>
+            <option>가상화폐투자자</option>
+            <option>내부거래자</option>
+            <option>마약상</option>
+            <option>살인청부업자</option>
+            <option>암살자</option>
+            <option>마법사</option>
+            <option>원거리 딜러</option>
+            <option>서포터</option>
+            <option>트랙터</option>
+            <option>헤이 거기 거기 미스터</option>
+            <option>에스파 윈터</option>
+            <option>블랙핑크 동생 그룹 베이비몬스터</option>
+            <option>엄청 길면 어떨지 궁금해서 막 길게 주저리주저리 해보는 테스트입니다</option>
+          </select>
+        </td>
+      </tr>
+      <tr bgcolor = "#f70f0f">
+        <th>좋아하는 걸그룹</th>
+        <td>
+          <select name="job" id="job" size="5" multiple>
+            <option>아이브</option>
+            <option>르세라핌</option>
+            <option>엔믹스</option>
+            <option>뉴진스</option>
+            <option>드림캐쳐</option>
+            <option>(여자)아이들</option>
+            <option>프로미스나인</option>
+            <option>레드벨벳</option>
+            <option>로켓펀치</option>
+            <option>아이즈원</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th bgcolor = "#f70f0f">자기소개</th>
+        <td><textarea rows="5" cols="50" name="content" id="content"></textarea></td>
+      </tr>
+      <tr>
+        <th bgcolor = "#f70f0f">첨부파일</th>
+        <td><input type="file" name="file" id="file" /></td>
+      </tr>
+      <tr>
+        <td colspan = "2" align = "center">
+        <!--
+          <input type = "submit" value = "전 송">
+          <input type = "reset" value = "다 시 입 력">
+        -->
+          <button type = "submit">전 송</button> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <button type = "reset">다 시 입 력</button> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <button type = "button">SHEESH BABYMON</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <p><br/></p>
+</body>
+</html>
