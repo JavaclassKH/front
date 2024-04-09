@@ -1,0 +1,42 @@
+/* test30.css */
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  display: grid;
+  grid-template-areas: 
+  'item1''item1''item1'
+  'item2''item2''item3'
+  'item4''item5''item6';
+  margin: 0px 100px;
+}
+
+.item {
+  background-color: rgb(245, 245, 153);
+  text-align: center;
+  line-height: 200px;
+}
+
+.big-item1 , .big-item2 {
+  display: grid;
+  margin: 20px 0px;
+
+}
+
+/* .big-item1 {
+  grid-template-columns: repeat(3, 200px);
+}
+
+.big-item2 {
+  grid-template-columns: repeat(3, 100px);
+} */
+
+.big-item1 {
+  grid-template-rows: 100px 200px 300px;
+}
+
+.big-item2 {
+  grid-template-rows: 100px 200px;
+  grid-template-columns: repeat(3, 200px);
+}

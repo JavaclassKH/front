@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test18.html</title>
+  <style>
+    table {
+      width: 400px; 
+      font-size: large;
+      color:darkred;
+      border-collapse: collapse;
+    }
+    th , td {
+      border: 1px solid darkgray;
+      padding: 10px 0px 10px 0px;
+      text-align: center;
+    }
+    thead {
+      background-color: aquamarine;
+    }
+    tbody {
+      background-color: bisque;
+    }
+    tfoot {
+      background-color: skyblue;
+    }
+    .atom {
+      font-weight: bolder;
+      
+    }
+    tr:hover {
+      background-color: #ded;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>111</th>
+          <th class="atom">222</th>
+          <th>333</th>
+        </tr>
+          <tbody>
+            <tr>
+              <td>444</td>
+              <td class="atom">555</td>
+              <td>666</td>
+            </tr>
+            <tr>
+              <td>777</td>
+              <td class="atom">888</td>
+              <td>999</td>
+            </tr>
+            <tr>
+              <td>111111</td>
+              <td class="atom">222222</td>
+              <td>333333</td>
+            </tr>
+            <tr>
+              <td>444444</td>
+              <td class="atom">555555</td>
+              <td>666666</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>777777</td>
+              <td class="atom">888888</td>
+              <td>999999</td>
+            </tr>
+          </tfoot>
+      </thead>
+   </table>  
+</div>
+</body>
+</html>

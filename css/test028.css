@@ -1,0 +1,92 @@
+body {
+  margin: 0px;
+  font-size: 0.8em;
+}
+
+.container {
+  background-color: beige;
+  height: 100vh;
+  display: flex;
+
+  /* flex-direction: row; -> 기본방향(행 기준)*/
+  /* flex-direction: column; */
+  /*flex-direction: row-reverse; */ /* 역방향으로 배치*/ 
+  /* flex-wrap: wrap; */
+  /* flex-wrap: wrap-reverse; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* justify-content: flex-end; */
+  /* justify-content: center; */
+
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
+
+
+  /* align-items: center; */
+  align-items: baseline;
+  align-content: space-around;
+  /* align-content: space-between; */
+
+  
+}
+
+.item {
+  width: 70px;
+  height: 70px;
+  border: 1px solid gray;
+  text-align: center;
+}
+
+.item:nth-child(1) {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+}
+
+.item1 {background-color: red;}
+.item2 {background-color: orange;}
+.item3 {background-color: yellow;}
+.item4 {background-color: green;}
+.item5 {background-color: blue;}
+.item6 {background-color: navy;}
+.item7 {background-color: violet;}
+.item8 {background-color: wheat;}
+.item9 {background-color: pink;}
+.item10 {background-color: silver;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
