@@ -8,22 +8,24 @@ function gugugilit() {
   let suStart = document.getElementById("suStart").value;
   let suEnd = document.getElementById("suEnd").value;
   let lineNum = document.getElementById("lineNum").value;
-  let res = 0 , temp = 0 , cnt = suStart;
+  let res = 0 , temp = 0 , cnt = 0;
+  let str = "";
 
   if(suStart > suEnd) {
-    suStart = temp;
-    temp = suEnd;
-    suEnd = suStart;
+    temp = suStart;
+    suStart = suEnd;
+    suEnd = temp;
   }
 
   for(let i=suStart; i<=suEnd; i++) {
     for(let j=1; j<=9; j++) {
       res = i * j;
-      console.log(i , "단: " , i , " X " , j ," = ", res);
+      str += i + "단 : " + i + "X" , j ," = " +  res;
       if(cnt == lineNum) console.log('');
+      cnt++;
     }
 
   }
-
-  demo.innerHTML = res;
+  console.log(str);
+  demo.innerHTML = str;
 }
