@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html(CallBack Function)</title>
+  <script>
+    'use strict'
+
+    // 함수가 함수를 호출!
+    function ive(answer, printYes, printNo ) {
+      if(answer.toUpperCase() == 'Y') printYes();
+      else printNo();
+    }
+
+    const printYes = () => console.log('작업 Keep Going');
+    const printNo = () => console.log('작업을 정지합니다.. 어아.. 안되잖아.. 정지가 안돼..');
+
+    let cnt = 0;
+    const callbackfunction = function print() {
+      cnt++;
+      console.log(`${cnt} : callback Hell... like infinity Loop`);
+      print();
+    }
+
+    // 팩토리얼 (콜백함수 사용하여 만들기!)
+    function factorial(m) {
+      return (m != 1) ? m * factorial(m - 1) : 1;
+    }
+
+    function factorialCalc() {
+      let m = prompt("수를 입력하세요");
+      let res = factorial(m);
+      console.log(`입력된 수 ${m}의 팩토리얼 값은 ${res}입니다`);
+    }
+
+
+  </script>
+</head>
+<body>
+  <h2>CallBack함수</h2>
+  <pre>
+    CallBack Function : 
+    - 함수가 함수를 호출하는 경우 
+    - 함수 호출시 매개값을 함수로 호출하는 함수
+    - 함수 선언시에 함수를 정의해서 사용하는 경우
+    [주로 사용할 때]
+    - Recursion():되부름(재귀함수) : 팩토리얼 , 피보나치 수열 
+    
+  </pre>
+  <p><input type="button" value="작업진행" onclick="atom('y', printYes, printNo)"/></p>
+  <p><input type="button" value="작업중지" onclick="atom('n', printYes, printNo)"/></p>
+  <p><input type="button" value="콜백지옥" onclick="callBackFunction()"/></p>
+  <p><input type="button" value="팩토리얼" onclick="alert('5팩토리얼 : ' + factorial(5))"/></p>
+  <p><input type="button" value="팩토리얼2" onclick="factorialCalc()"/></p>
+</body>
+</html>

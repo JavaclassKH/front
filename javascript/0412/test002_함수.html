@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test02.html</title>
+  <script>
+    "use strict"; //사용할 변수는 반드시 선언 후 사용할 때 작성
+    let cnt = 0;
+    
+    let atom = 100;
+    let res = atom;
+    // 호이스팅(hoisting) : function으로 함수 선언시 메모리영역에 올라가므로 위에서 호출해도 사용 가능
+    print1();
+    // 일반함수
+    function print1() {
+      cnt++;
+      // console.log(cnt + "안녕하세요");
+      console.log(`${cnt}.안녕하세요.`);
+      // if(cnt >= 5) cnt = 0;
+    }
+    
+    function print2(msg) {
+      cnt++;
+      console.log(`${cnt}.${msg}`);
+      // console.log(msg);
+      
+      // const json = JSON.stringify(msg); // JSON에서 제공하는 함수
+      // console.log(json);
+    }
+    
+    // 매개값으로 객체(Object : '키'와 '값'으로 구성되는 자료형)를 전달받아서 처리하는 함수 (const는 자바의 static final과 같음)
+    function print3(obj) {
+      console.log(obj);
+      console.log(obj.name);
+      console.log(obj.age);
+      print2(obj.name);
+      print2(obj.age);
+    }    
+
+    const btom = {name:'홍길동' , age:26};    // {}로 둘러쌓인 것은 객체가 됨 - json형식으로 받은 웹정보를 사용하려면 객체로 받아야 함
+    print3(btom);
+    
+    // 기본 파라미터(Default parameter) : 매개변수에 값이 전달되지 않으면 기본값으로 대치할 수 있다.
+    function print4(msg, atom) {
+      cnt++;
+      console.log(`${cnt}.${msg} , atom : ${atom}`);
+    }
+    
+    // 기본 파라미터(Default parameter) : 매개변수에 값이 전달되지 않으면 기본값으로 대치할 수 있다.
+    function print5(msg, atom = 'Xiexie') {
+      cnt++;
+      console.log(`${cnt}.${msg} , atom : ${atom}`);
+    }
+
+    // 여러개의 매개값이 넘어올 경우(배열과 같은 자료)
+    function print6(su1, su2, su3, su4, su5) {
+      console.log(`${su1}.${su2}.${su3}.${su4}.${su5}.`);
+    }
+    
+    function print7(...args) {  // 주는 값을 배열로 받아서 출력
+      console.log('');
+      // 일반 for문으로 출력!
+      // for(let i=0; i<args.length; i++) {
+      //   cnt++;
+      //   console.log(`${cnt}.${args[i]}`);
+      // }
+
+      // 향상된 for문으로 출력! (in : 객체의 키를 뽑을때/ of : 객체의 값을 뽑을때)
+      // for(const arg of args) {
+      //   cnt++;
+      //   console.log(`${cnt}.${arg}`);
+      // }
+      
+      // console.log('foreach');
+      // foreach문을 사용해서 출력
+      // args.forEach(function(arg){     
+      //   cnt++;
+      //   console.log(`${cnt}.${arg}`);      
+      // }); 
+      
+      console.log('arrow function');
+      // foreach :
+      args.forEach((arg) => {     
+        cnt++;
+        console.log(`${cnt}.${arg}`);      
+      }); 
+    }
+    
+    
+          // 값 되돌려주기(Return)
+          function print8(su1, su2) {
+            console.log(`su1 : ${su1} , su2 : ${su2}`);
+            return su1 +su2;
+          }
+
+
+
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h2 class="bt">함수 연습</h2>
+    <input type="button" value="일반함수" onclick="print1()" /><br/><br/>
+    <input type="button" value="매개값전달" onclick="print2('hi')" /><br/><br/>
+    <input type="button" value="객체처리" onclick="print3(btom)" /><br/><br/>
+    <input type="button" value="기본값처리" onclick="print4('gamsa')" /><br/><br/>
+    <input type="button" value="기본값처리2" onclick="print5('gamsa')" /><br/><br/>
+    <input type="button" value="여러개값처리" onclick="print6(10,20,'헬로','Bravo',true)" /><br/><br/>
+    <input type="button" value="여러개값처리2" onclick="print7(10,20,'헬로','Bravo',true)" /><br/><br/>
+    <input type="button" value="여러개값처리3" onclick="alert(print7(10,20,'헬로','Bravo',true))" /><br/><br/>
+    <input type="button" value="리턴값처리" onclick="alert(print8(11,22))" /><br/><br/>
+  </div>
+</body>
+</html>

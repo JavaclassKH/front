@@ -1,0 +1,23 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: '맑은 고딕', '궁서', '굴림';
+  font-size: 1em;
+  background: linear-gradient(to bottom , skyblue , white 50%);
+  background-attachment: fixed;
+}
+
+#container {
+  width: 120%;
+  height: 280px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #f4f4f4;
+}
+
+/* 타이틀 영역(header) */
+#MainWelcome {
+  height: 280px;
+  margin-top: 0px;
+  background-image: url("../css/images/4.jpg");
+}

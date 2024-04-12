@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test4.html</title>
+  <script>
+    'use strict';
+    // 익명함수
+    // let mbc = function() {
+    //   console.log("이곳은 함수 pyo현식!");
+    // }
+    
+    // let mbc1 = () => {
+    //   console.log("이곳은 함수 pyo현식!");
+    // }
+
+    let mbc1 = () => console.log("1. 이곳은 함수 pyo현식!");
+
+    let mbc2 = () => "2. 이곳은 함수 pyo현식!";  // 한줄이므로 return이 생략됨. 해당 문자열이 return됨.
+    mbc1();
+    console.log("3. " ,mbc2());
+    let res = mbc2();
+    console.log("4." , res);
+    console.log('');
+
+    // 일반 함수 // 
+    // function mbc3(su1, su2) {
+    //   res = su1 + su2;
+    //   return res;
+    // }
+
+    // 익명 함수 (Arrow function) // 
+    // const mbc3 = (su1, su2) => {
+    //   res = su1 + su2;
+    //   return res;
+    // }
+
+    const mbc3 = (su1, su2) => su1 + su2;
+    
+
+  </script>
+</head>
+<body>
+  <h2><strong>하하하하핳</strong></h2>
+  <p><input type="button" value="MBC1" onclick="mbc1()" /></p>
+  <p><input type="button" value="MBC3" onclick="alert(mbc3(15,25))" /></p>
+</body>
+</html>
