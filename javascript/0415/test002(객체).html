@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> test2(객체).html</title>
+  <script>
+    'use strict';
+
+    //객체 생성(객체 : '키(key)'와 '값(value)'으로 되어 있음)
+    let obj1 = {}; // 객체를 생성하며 값 넣기
+    let obj2 = new Object(); // 객체를 먼저 생성하기
+    obj2.name = "스윗들"; // == obj1 = {name:홍길동};
+    obj2.age = 18;
+    obj2.jumsu = [101,91,81];
+    obj2.myFunc = function() {
+      console.log('성명 : ' + this.name + ' , 나이 : ' + this.age);
+    };
+    obj2.myObj = {
+      tel : "010-5252-4936",
+      address : "청주시 흥덕구 사창동 그린컴퓨터아트학원"
+    }
+
+    console.log("obj2 객체 : " + obj2);
+    console.log('');
+    console.log(obj2.myFunc);
+    obj2.myFunc();
+
+  </script>
+</head>
+<body>
+  <h2><s>객체(Object) 연습</s></h2>
+</body>
+</html>

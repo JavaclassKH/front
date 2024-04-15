@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6.html</title>
+  <script src="test6.js"></script>
+  <script>
+    'use strict';
+    console.clear();
+
+    member = new Member("고말숙",32,"마약거래상");
+    console.log("member : " , member);
+    console.log('');
+
+    member.name = "케이셉";
+    member.age = 28;
+    member.job = "래퍼";
+    console.log("member : " , member);
+    console.log('');
+
+    // 상속 
+    class ChildMember extends Member { }
+    let childMember = new ChildMember("소비자",0,"은행청부업자");
+    console.log("childMember : " , childMember);
+
+  </script>
+</head>
+<body>
+  <h1>상 속 Training</h1>
+</body>
+</html>

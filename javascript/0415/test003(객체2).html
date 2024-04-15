@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test3(객체2).html</title>
+  <script>
+    'use strict';
+    let name = "백길동";
+    let age = 27;
+    let job = "살인청부업자";
+    memberprint(name, age, job);
+    console.log('');
+    
+    name = "유민화";
+    age = 37;
+    job = "카지노환전상";
+    memberprint(name, age, job);
+    
+    function memberprint(name, age, job) {
+      console.log(name);
+      console.log(age);
+      console.log(job);
+    }
+    console.log('');
+    console.log('');
+    console.log('');
+
+    // 객체로 만들어보자!
+    // Object(객체로 값을 하나의 변수에 받아서 처리해보자)
+    const obj1 = {name:"백길동",age:27,job:"살인청부업자"};
+    const obj2 = {name:"고문숙",age:43,job:"카지노환전상"};
+    memberprint2(obj1);
+    console.log("============================");
+    memberprint2(obj2);
+
+    function memberprint2(member) {
+      console.log(member.name);
+      console.log(member.age);
+      console.log(member.job);
+    }
+
+
+  </script>
+</head>
+<body>
+  <h1>객 체 연 습 한 다 고 몇 번 을 말 해애애애!!!!!</h1>
+</body>
+</html>

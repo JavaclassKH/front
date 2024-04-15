@@ -20,12 +20,11 @@ function gugugilit() {
   for(let i=suStart; i<=suEnd; i++) {
     for(let j=1; j<=9; j++) {
       res = i * j;
-      str += i + "단 : " + i + "X" , j ," = " +  res;
+      str += i + "단 : " + i + "X" , j ," = " + res;
       if(cnt == lineNum) console.log('');
       cnt++;
     }
-
+    console.log(str);
+    demo.innerHTML = str;
   }
-  console.log(str);
-  demo.innerHTML = str;
 }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test4(객체3).html</title>
+  <script>
+    'use strict';
+
+    // const obj1 = new Object(); // 객체의 생성
+    const obj2 = {name:"정부철",age:37,job:"사채업자"};
+    console.log(obj2);
+    console.log("==============================================");
+    obj2.gender = true; // 성별 (남 true / 여 false)
+    console.log(obj2);
+    delete obj2.gender;
+    console.log("==============================================");
+    console.log(obj2);
+    console.log("==============================================");
+    console.log("==============================================");
+    // 값의 처리
+    console.log('성명 : ' , obj2.name);
+    console.log('성명2 : ' , obj2['name']);  // 무조건 문자형식을 대괄호 안에 넣어야 함
+    console.log("==============================================");
+
+    console.clear();
+    // const obj3 = {name:"백길동",age:27,job:"살인청부업자"};
+    // const obj4 = {name:"고문숙",age:43,job:"카지노환전상"};
+    // const obj5 = {name:"경산체",age:55,job:"내부거래자"};
+    const obj6 = {name:"장발장",age:48,job:"절도9단"};
+
+    function makeObj(name, age, job) {
+      return{
+        // name: name,
+        // age: age,
+        // job: job
+        name,
+        age,
+        job
+      };
+    }
+    const obj3 = makeObj("장발장",48,"절도 9단");
+    const obj4 = makeObj("아칼리",23,"암살자");
+    console.log(obj3);
+    console.clear();
+    
+    // '키' 검색 - in
+    for(let key in obj3) {
+      console.log(key, ":" ,obj3[key]);
+    }
+    console.log('');
+
+    const arr = [1,"one","하나","我愛你",true];
+    for(let value of arr) {
+      console.log(value);
+    }
+    console.log('');
+
+    // 객체 복사 (얕은 복사) => 주소를 복사
+    console.log("obj6 => " , obj6);
+    let obj7 = obj6;
+    console.log("obj7 => " , obj7);
+    console.log("=======================");
+    console.clear();
+    
+    obj7.name = "유소나";
+    console.log("obj7 => " , obj7);
+    console.log("obj6 => " , obj6);
+    console.log("========================");
+    
+    // 객체 복사 (깊은 복사) 
+    const obj8 = {};
+    for(let key in obj7) {
+      obj8[key] = obj7[key];
+    }
+    console.log("obj8 => " , obj8);
+    console.log("obj7 => " , obj7);
+    console.log("----------------------------");
+    
+    obj8.name = "마석도";
+    console.log("obj8 => " , obj8);
+    console.log("obj7 => " , obj7);
+    console.log("----------------------------");
+    
+    console.clear();
+    // 객체복사명령어 : assign [깊은 복사]
+    const obj9 = {};
+    Object.assign(obj9, obj6);
+    console.log("obj9 => " , obj9);
+    console.log("obj6 => " , obj6);
+    console.log("----------------------------");
+    
+    obj9.name = "과메기";
+    console.log("obj9 => " , obj9);
+    console.log("obj6 => " , obj6);
+    console.log("----------------------------");
+    
+
+
+
+
+
+    /* ※오 류 남※
+    // '값' 검색 - of
+    for(let value of obj6) {
+      console.log(value);
+    } */
+
+  </script>
+</head>
+<body>
+  <h1>객 체 연 습 한 다 고 몇 번 을 말 해애애애!!!!!</h1>
+</body>n
+</html>
