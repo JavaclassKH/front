@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t3_setTimeout.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let rand = 0; 
+    let statusTime;
+    console.log(rand);
+  
+    function plus() {
+      rand = (Math.random * 20000) + 1; 
+      clearTimeout(statusTime);
+
+      statusTime = setTimeout(plus , rand);
+
+      demo.innerHTML = rand;
+    }
+    
+    function minus() {
+      rand = (Math.random * 20000) + 1; 
+      clearTimeout(statusTime);
+
+      statusTime = setTimeout(minus , rand);
+
+      demo.innerHTML = rand;
+    }
+    
+
+    function stop() {
+      clearTimeout(statusTime);
+    }
+  
+
+
+
+  </script>
+</head>
+<body>
+  <div class="container"></div>
+    <h2> setTimeout()연 습 </h2>
+    <pre>   
+      - 게임
+    </pre>
+    <p>
+      <input type="button" value="증가" onclick="plus()" class="btn btn-success mr-3" />
+      <input type="button" value="감소" onclick="minus()" class="btn btn-primary mr-3" />
+      <input type="button" value="정지" onclick="stop()" class="btn btn-danger" />
+    </p>
+    <hr/>
+    <div id="demo" style="font-size: 3em; color: red;"></div>
+  </div>
+</body>
+</html>

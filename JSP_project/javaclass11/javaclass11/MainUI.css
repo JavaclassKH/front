@@ -33,10 +33,8 @@ body {
 .signcontainer {
   margin-top: 25px;
   margin-left: 30px;
-  border: 2px solid gray;
   width: 100%;
   /* height: 200px; */
-  border-radius: 15px; 
 }
 
 .signIn {
@@ -50,17 +48,12 @@ body {
 }
 
 .topImages {
-  /* width: 300px;
-  height: 200px;
-  display: grid;
-  grid-template-areas: 
-  'img1''img2''img3''img4';
-  margin: 0px 10px; */
   float: left;
 }
 
 .login {
   float: left;
+  line-height: 3px;
 }
 
 .img1 {

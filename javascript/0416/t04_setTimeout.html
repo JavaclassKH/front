@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t4_setTimeout.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    let cnt = 0;
+    let statusTime;
+
+    function start() {
+      clearTimeout(statusTime);
+      cnt += 10;
+
+      
+      if(cnt < 1000) {       
+        statusTime = setTimeout(start , 100);
+        demo.innerHTML = `<progress value=${cnt} max="1000" style="width: 800px"></progress>`; 
+      }
+      else {
+        demo.innerHTML = `<progress value=${cnt} max="1000" style="width: 800px"></progress> - 작업종료`;
+        return false; 
+      }
+    }
+    
+    function minus() {
+      clearTimeout(statusTime);
+      cnt--;
+
+      statusTime = setTimeout(minus , 50);
+
+      if(cnt % 10 == 0) clearTimeout(statusTime);
+
+      demo.innerHTML = cnt;
+    }
+    
+
+    function stop() {
+      clearTimeout(statusTime);
+    }
+
+  
+
+
+
+  </script>
+</head>
+<body>
+  <div class="container"></div>
+    <h2> 진행상황 확인하기! </h2>
+    <pre>   
+      - 진행상황으 눈으로 보즈아
+    </pre>
+    <p>
+      <input type="button" value="launch" onclick="start()" class="btn btn-success mr-3" />
+      <input type="button" value="reset" onclick="location.reload()" class="btn btn-primary mr-3" />
+    </p>
+    <hr/>
+    <div id="demo" style="font-size: 1.5em; color: red;"></div>
+  </div>
+</body>
+</html>
