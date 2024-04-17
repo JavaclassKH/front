@@ -14,46 +14,46 @@
     let statusTime;
     let timeFormat = false;
  
-// 시스템의 시간을 읽어온다
-function clock() {
-  let today = new Date();
-  let hh = today.getHours();
-  let mm = today.getMinutes();
-  let ss = today.getSeconds();
- 
-  if(timeFormat)  {
-    if(hh >= 12) {
-      hh = hh - 12;
-      demo.innerHTML = "오후 " + hh + "시 " + mm + "분 "  + ss + "초";
-    }
-    else {
-      demo.innerHTML = "오전 " + hh + "시 " + mm + "분 "  + ss + "초";
-    } 
-  }
-  
-  else{
-    demo.innerHTML = hh + "시 " + mm + "분 "  + ss + "초";
-  }
-}
- 
-function start() {
-  clock();
-  statusTime = setTimeout(start, 1000);
-}
- 
-function stop() {
-  clearTimeout(statusTime);
-  demo.innerHTML = "";
-}
- 
-function twotime() {
-  timeFormat = true;
-}
- 
-function onetime() {
-  timeFormat = false;
-}
+    // 시스템의 시간을 읽어온다
+    function clock() {
+      let today = new Date();
+      let hh = today.getHours();
+      let mm = today.getMinutes();
+      let ss = today.getSeconds();
     
+      if(timeFormat)  {
+        if(hh >= 12) {
+          hh = hh - 12;
+          demo.innerHTML = "오후 " + hh + "시 " + mm + "분 "  + ss + "초";
+        }
+        else {
+          demo.innerHTML = "오전 " + hh + "시 " + mm + "분 "  + ss + "초";
+        } 
+      }
+      
+      else{
+        demo.innerHTML = hh + "시 " + mm + "분 "  + ss + "초";
+      }
+    }
+    
+    function start() {
+      clock();
+      statusTime = setTimeout(start, 1000);
+    }
+    
+    function stop() {
+      clearTimeout(statusTime);
+      demo.innerHTML = "";
+    }
+    
+    function twotime() {
+      timeFormat = true;
+    }
+    
+    function onetime() {
+      timeFormat = false;
+    }
+        
  
   </script>
 </head>
