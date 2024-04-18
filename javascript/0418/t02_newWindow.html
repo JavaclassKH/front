@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t2_newWindow.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    // window.open(주소or문서,윈도우이름(생략가능),생성크기와 위치);
+    function newWindow1() {
+      let url = "Https://www.naver.com";
+      let windowName = "Warm neiborhood";
+      let opt = "width='1500px' height='900px' top='200px' left='500px'";
+      window.open(url,windowName,opt);
+    }
+    
+    function newWindow2() {
+      let url = "file:///D:/javaclass/Front/works/javascript/0418/t2_newWindow.html";
+      let windowName = "Warm neiborhood";
+      let opt = "width='1500px' height='900px' top='200px' left='500px'";
+      window.open(url,windowName,opt);
+    }
+
+
+
+
+  </script>
+</head>
+<body>
+  <br/>
+  <div class="container">
+    <h2 style="font-size: 1em; color: blue;">이벤트연습(window.open())</h2>
+    <div>
+      <input type="button" value="새창기릿1" onclick="newWindow1()" class="btn btn-success mr-5" />
+      <input type="button" value="새창기릿2" onclick="newWindow2()" class="btn btn-success" />
+    </div>
+  </div>
+</body>
+</html>

@@ -1,14 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test19_정규식.html</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="test19.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test20_정규식.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .container {
+        background: linear-gradient(to bottom ,red);
+      }
+
+      .form-group {
+        background-color: lemonchiffon;
+        font-style: initial;
+        border: 1px dotted gray;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      type .text .password .date .content {
+        background-color: aquamarine;
+      }
+    </style>
+    <script>
+    'use strict';
+     
+    function fCheck() {
+       // 반드시! 가장 먼저! 정규식을 만들고 나서 작업한다
+      let reMid = /^[a-zA-Z0-9]{4,20}$/g; 
+      let reEmail = /^[a-zA-Z0-9]([-_]?[a-zA-Z0-9])*@[a-zA-Z0-9]([-_]?[a-zA-Z0-9])*(\.[a-zA-Z]{2,3})+$/i; 
+      let reTel = /\d{2,3}-\d{3,4}-\d{4}$/g;
+      let reNickname = /[a-zA-Z0-9가-힣]{4,14}$/g;
+      let rePassword = /(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()_+-={}\[\],\.\/<>?\\]+).{4,20}/;
+      // let rePassword2 = /(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()_+\-=\[\]{}|;:,.<>?\\]).{4,20}/; // GPT 작품
+      let reHomepage = /([https?:\/\/])?([a-zA-Z\d]+)\.([a-zA-Z\d]{2,15})([\/\w\.-]*)*\/?$/;
+
+      // ============================================================
+      let mid = document.getElementById("mid").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let nickname = document.getElementById("nickname").value.trim();
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let homepage = document.getElementById("homepage").value.trim();
+      let tel = document.getElementById("tel").value.trim();
+
+      // 유효성 검사(아이디)
+      if(!reMid.test(mid)) {
+        alert("아이디는 영문(대,소문자)과 숫자와 밑줄(_)만 사용하여 4~20자까지 가능합니다");
+        document.getElementById("mid").focus();
+        return;
+      }
+      
+      // 유효성 검사(비밀번호)
+      if(!rePassword2.test(password)) {
+        alert("비밀번호는 영문자,숫자,특수문자를 1개 이상 사용하여 4~20자까지 작성해주세요");
+        document.getElementById("password").focus();
+        return;
+      }
+      
+      // 유효성 검사(닉네임)
+      if(!reNickname.test(nickname)) {
+        alert("닉네임은 한글,영어,숫자로 4~14자까지 사용 가능합니다");
+        document.getElementById("nickname").focus();
+        return;
+      }
+
+      // 유효성 검사(성명)
+
+      // 유효성 검사(이메일)
+
+      // 유효성 검사(홈페이지)
+      if(!reHomepage.test(homepage)) {
+        alert("올바른 홈페이지 주소를 작성해주세요");
+        document.getElementById("password").focus();
+        return;
+      }
+      
+      // 유효성 검사(이메일)
+      
+      if(!reTel.test(tel)) {
+        alert("전화번호 양식에 맞게 작성해주세요");
+        document.getElementById("email").focus();
+        return;
+      }
+      
+      
+      alert("유효성 검사 통과. 회원가입 완료.");
+      // myform.submit();
+      // location.href = 
+    }
+
+  </script>
 </head>
 <body>
   <p><br/></p>
@@ -21,7 +107,11 @@
       </div>
       <div class="form-group">
         <label for="password">비밀번호</label>
-        <input type="password" name="password" id="password" value="1423" placeholder="Enter password please" class="form-control" required />
+        <input type="password" name="password" id="password" value="adsf1423" placeholder="Enter password please" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="rePwd">비밀번호체크</label>
+        <input type="password" name="rePwd" id="rePwd" value="adsf1423!" placeholder="Enter password please" class="form-control" required />
       </div>
       <div class="form-group">
         <label for="nickname">닉네임</label>
@@ -33,7 +123,7 @@
       </div>
       <div class="form-group">
         <label for="email">이메일</label>
-        <input type="text" name="email" id="email" placeholder="Enter email please" class="form-control" required />
+        <input type="text" name="email" id="email" value="kh980614@gmail.com" placeholder="Enter email please" class="form-control" required />
       </div>
       <div class="form-group">
         <label for="homepage">홈페이지</label>

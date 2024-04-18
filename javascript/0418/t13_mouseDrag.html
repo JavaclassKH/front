@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t13_mouseDrag.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #circle {
+      width: 120px;
+      height: 110px;
+      border-radius: 51%;
+      border: 1px dotted #ff0021;
+      background-color: #ff0000;
+      position: absolute;
+      left: 110px;
+      top: 110px;
+      z-index: 99;
+    }
+
+  </style>
+  <script>
+    'use strict';
+    let mx, my;
+    let flag = 0;
+    
+    function move_start(e, sw) {
+      //alert("클릭드래그");
+      let circle = document.getElementById("circle");
+      mx = e.clientX - circle.offsetLeft;
+      my = e.clientY - circle.offsetTop;
+      flag = sw;
+    }
+
+    function move(e) {
+      if(flag == 0) return false;
+
+      let circle = document.getElementById("circle");
+      let x = e.clientX - mx;
+      let y = e.clientY - my;
+
+      if(x > 0) circle.style.left = x + "px";
+      if(y > 0) circle.style.top = y + "px";
+
+      //flag = sw;
+    }
+
+    function move_stop(e, sw) {
+      flag = sw;
+    }
+
+    
+
+  </script>
+</head>
+<body>
+  <br/>
+  <div class="container">
+    <h2 style="font-size: 1em; color: blue;">트 리 거 / onkeyup() , onInput()</h2>
+    <h3>offsetLeft , offsetTop</h3>
+    <hr/>
+    <div>   
+      <br/><hr/>
+      <div>
+        <p>마우스로 물체 이동시키기</p>
+        <div id="circle" onmousedown="move_start(event, 1)" onmouseup="move_stop(event, 0)" onmousemove="move(event)"></div>
+      </div>
+    <div id="demo2"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t11_JSON.html</title>
+  <script>
+    'use strict';
+
+    // JSON.Stringify() : Object to JSON => JavaScript의 값이나 객체를 JSON문자열로 변경
+    let json = JSON.stringify(true);
+    console.log("1." , json);
+    console.log('');
+
+    json = JSON.stringify(142321);
+    console.log("2." , json);
+    console.log('');
+
+    json = JSON.stringify("Apple","Banana",true,9883);
+    console.log("3." , json);
+    console.log('');
+    
+    json = JSON.stringify("的");
+    console.log("4." , json);
+
+    console.log("===================================");
+    // JavaScript에서의 Object
+    const member = {
+      name: "홍길동",
+      age: 25,
+      address: "서울",
+      color: "red",
+      gender: true,
+      birthday: new Date(),
+      atom : function() {
+        console.log("성명 : " , member.name);
+      }
+    }
+
+    console.log(member);
+    console.log("name : " , member.name);
+    console.log("birthday.getDate() : " , member.birthday.getDate());
+    
+    console.log("atom : " , member.atom());
+    // console.clear();
+    console.log("-------------------------------------------");
+    // JavaScript객체를 JSON문자열 포맷으로 변환
+    const jsonStr = JSON.stringify(member);
+    console.log("jsonStr : " , jsonStr);
+    console.log("");
+    console.log("");
+    console.log("-------------------------------------------");
+    
+    // JSON형식은 "키"와 "값"에 띠른 조정(변경) 을 하고자 한다면, '매개변수'로 "키"/"값"을 받아서 처리해야 한다
+    json = JSON.stringify(member, (key,value) => {
+      // 키와 값의 처리
+      return key == "name" ? "사용자" : value;
+      
+    });
+
+    console.log(json);
+    console.log("");
+    console.log("");
+    console.log("-------------------------------------------");
+    
+    // JSON.parse() : JSON to Object => JSON형식의 문자열을  JavaScript의 Object형식으로 변경
+    // const jsObj = JSON.parse();
+    let text = 
+    '{ "회원정보" : [ ' +
+        '{"성":"홍", "이름":"길동"},' +
+        '{"성":"김", "이름":"말숙"},' +
+        '{"성":"이", "이름":"기자"},' +
+        '{"성":"박", "이름":"세리"}' +
+    ']}';
+
+    const jsObj = JSON.parse(text);
+    console.log(jsObj);
+    console.log("");
+    console.log(jsObj.회원정보);
+    console.log(jsObj.회원정보[0]);
+    console.log(jsObj.회원정보[1]);
+    console.log(jsObj.회원정보[2]);
+    console.log(jsObj.회원정보[3].성 + "" + jsObj.회원정보[3].이름 + "");
+    console.log("");
+    console.log("");
+
+    for(let mem in jsObj.회원정보) {
+      console.log(mem);
+    }
+    console.log();
+    
+    for(let mem of jsObj.회원정보) {
+      console.log(mem);
+    }
+    
+    console.log("");
+    
+    for(let mem of jsObj.회원정보) {
+      console.log(mem.성 + "" + mem.이름);
+    }
+    console.log("-=-=-=-=-=-=-=-=-==--==-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=");
+    console.log(json);
+
+    // 웹에서 들어온 JSON형식의 '문자열 데이터'를 js의 Object형식으로 바꿔주는 것(함수는 처리가 되지 않음)
+    let obj = JSON.parse(json);  
+    console.log(obj);
+    console.log(typeof(obj.birthday));
+    // console.log(obj.birthday.getDate());
+    console.log("");
+    console.log("");
+
+    // 날짜형식의 자료는 문자로 Parsing되기에 Parsing시에 날짜형식으로 변환해서 Parsing처리한다.
+    obj = JSON.parse(json, (key,value) => {
+      return key === 'birthday' ? new Date(value) : value;
+    });  
+
+    console.log(obj.birthday);
+    console.log(typeof(obj.birthday));
+    console.log(obj.birthday.getMonth() + "월 " + obj.birthday.getDate() + "일");
+
+
+  </script>
+  <style>
+    .container{
+      background: linear-gradient(to bottom , aqua);
+    }
+  </style>
+</head>
+<body>
+  <h2>JSON 자료 활용연습</h2>
+  <div class="container">
+    <div class="myform">
+      <h4>자료의 전달 방식 : XML / JSON</h4>
+      <pre>
+        // XML : 확장된 HTML 태그(본인이 태그를 정의하여 사용)
+        JSON : JavaScript Object Notation
+        ㄴ> 모바일(웹)에서의 서버와 데이터 전송방식에서 사용
+
+        ※특징
+        ① 프로그램의 종류나 플랫폼에 관계없이 사용 가능하다. (예: Java , C , C++ , C# , JSP , PHP , Cotlin , Go 등등등)
+        ② 처리방식은 Object를 String형식으로 직렬화(Serialize) 처리를 해서 전송한다
+          따라서 다시 사용하고자 한다면 JSON문서형식을 JavaScript Object형식으로 변환하여 사용해야 한다
+        1. JSON 데이터 형식 : "key":"value" => JSON에서의 자료는 꼭 "큰 따옴표로 표시"한다. 
+        -- WEB을 통해 들어오는 데이터는 무조건 문자로 본다
+        2. JSON 객체(중괄호로 둘러싼다) : {"key":"value"} <= JSON객체로 만드는 법
+        3. JSON의 배열(대괄호로 둘러싼다) : 
+        - 예시 -
+        {
+          "회원정보" : [
+            {"성":"케이셉","이름":"라마"}
+            {"성":"포이즌","이름":"머쉬룸"}
+            {"성":"릴","이름":"섹시"}
+            {"성":"이어드럼","이름":"버스터"}
+          ]
+        }  
+        4. JSON텍스트를 Javascript 객체로 변환 : 변환방식 => Stringify() , parse()
+        (1) JSON.Stringify() : JavaScript객체를 JSON형식의 문자열로 변경
+        (2) JSON.parse() : JSON형식의 문자열을 Object(JavaScript 객체)형식으로 변경
+      </pre>
+    </div>
+  </div>
+</body>
+</html>
