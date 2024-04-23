@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t19_Animate.html</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    // $(function() {});  ==  $(document.ready(function() {})); <- document의 실행이 마친 후 비즈니스로직 실행
+    // animate({위치},지연시간,콜백함수) <= animate사용법
+
+    $(() => {
+      $('.aniBtn').on('click', function(){
+        // $('aniBox').animate({width:'toggle'},'normal'); // 폭이(0PX)로 변환된다
+        $('.aniBox').animate({width:'200px'},'normal'); 
+        $('.aniBox').animate({height:'150px'},'normal'); 
+        $('.aniBox').animate({width:'100px'},'normal'); 
+        $('.aniBox').animate({height:'100px'},'normal'); 
+
+        $('.aniBox2').animate({width:'200px'},'normal'); 
+        $('.aniBox2').animate({height:'50px'},'normal'); 
+        $('.aniBox2').animate({width:'100px'},'normal'); 
+        $('.aniBox2').animate({height:'100px'},'normal'); 
+        // queue의 개념으로 처리됨: fifo 먼저 입력된 것이 먼저 처리됨
+      });
+    });
+
+
+  </script>
+  <style>
+    body { margin: 0px; }
+    div.aniBox {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      position: absolute;
+      left: 100px;
+      top: 250px;
+      font-size: 1rem;
+      padding-top: 5px;
+      padding-left: 5px;
+      margin: 0px;
+    }
+    div.aniBox2 {
+      width: 100px;
+      height: 100px;
+      background-color: brown;
+      position: absolute;
+      left: 300px;
+      top: 350px;
+      font-size: 1rem;
+      padding-top: 5px;
+      padding-left: 5px;
+      margin: 0px;
+    }
+
+  </style>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <button class="aniBtn btn btn-success">클릭</button>
+    <button class="aniBtn btn btn-secondary" onclick="location.reload()">원래대로</button>
+    <hr/>
+    <div class="aniBox">Good</div>
+    <div class="aniBox2">Good2</div>
+  </div>
+</body>
+</html>

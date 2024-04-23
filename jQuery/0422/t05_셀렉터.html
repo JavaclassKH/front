@@ -15,14 +15,15 @@
 
     $(function(){
       $("#checkBtn").click(function(){
-        $("*").css("backgroundColor", "skyblue");
+        $("*").css("backgroundColor","pink");
+        $(".container").css("backgroundColor", "skyblue");
         $("h2").css("backgroundColor","yellow");
         $("p").css("color", "red");
         $("#atom").css({
           fontSize: "20pt",
           color: "blue"
         });
-        $("p.mbc").css("fontWeight", "bolder");
+        $("p.mbc").css("fontSize","3em","bolder");
       });
 
       $("#resetBtn").click(function(){
