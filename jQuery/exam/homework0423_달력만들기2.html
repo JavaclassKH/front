@@ -18,6 +18,7 @@
   let day = dayClac.getDate();
   let yearMonthDay = `오늘 날짜 : ${year}년 ${month}월 ${day}일`;
   yearMonthDay += '<br/><b><font color="red">오늘 이전 날짜는 선택할 수 없습니다</font></b>';
+  let min = 0;
  
 
   $(() => {
@@ -25,6 +26,8 @@
 
     $('td').on('click', function() {
       let ac = $('this').addClass('Selected');
+      let td = document.getElementById('Calender').innerText;
+      console.log(td);
 
       let cellCheck = eval($(this).text());
         if(cellCheck < day) { 
@@ -39,8 +42,13 @@
           $(this).removeClass('Selected');
           cnt--;
         }
-        let cntPrint = '<br/><br/><b>현재 선택한 날짜 수는 <span style="color: red;">' + cnt + '</span>개 입니다</b>';
+        let cntPrint = '<br/><br/><b>현재 선택한 날짜 수는 <font color="red">' + cnt + '</font>개 입니다</b>';
         $('#SelectCnt').html(cntPrint);
+
+
+
+
+
     });
 
 
@@ -86,7 +94,7 @@
   <div class="container">
     <h2>날짜선택달력</h2>
     <p><br/></p>
-    <table>
+    <table class="Calender">
       <tr>
         <td>1</td>
         <td>2</td>
@@ -130,3 +138,17 @@
   </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
